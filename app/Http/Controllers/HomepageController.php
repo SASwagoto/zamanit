@@ -16,24 +16,18 @@ class HomepageController extends Controller
     public function search(Request $request)
     {
     $keyword = $request->keyword;
-          // Enable query logging
-    DB::enableQueryLog();
 
-    // Measure start time
+    DB::enableQueryLog();
     $startTime = microtime(true);
 
-    // Execute the query
     $results = DB::table('products')
         ->where('name', 'like', '%' . $keyword . '%')
         ->orWhere('category', 'like', '%' . $keyword . '%')
         ->orWhere('details', 'like', '%' . $keyword . '%')
         ->get();
 
-    // Measure end time
     $endTime = microtime(true);
     $executionTime = $endTime - $startTime;
-
-    // Get the query log
     $queries = DB::getQueryLog();
 
     return view('hompage.search', compact('results','executionTime', 'keyword'));
