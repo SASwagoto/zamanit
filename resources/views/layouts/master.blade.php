@@ -9,7 +9,9 @@
 
     <link rel="shortcut icon" href="{{asset('homepage/image/favicon.jpg')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('homepage/plugins/fontawesome/css/all.min.css')}}">
-    @vite('resources/css/app.css', 'resources/js/app.js')
+    <link rel="stylesheet" href="{{asset('build/assets/app-ophywPJu.css')}}">
+    <script src="{{asset('build/assets/app-C1-XIpUa.js')}}"></script>
+    {{-- @vite('resources/css/app.css', 'resources/js/app.js') --}}
 </head>
 
 <body>
